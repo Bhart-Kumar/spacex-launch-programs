@@ -2,12 +2,14 @@
 Angular 10 learning project
 
 == Ui triggers
+
 NOTE: Used Angular-flex so custom UI trigger point is not provided by Angular-flex. Waiting Angular-flex-layour for this feature: https://github.com/angular/flex-layout/issues
+
 . Mobile View : 600px;
 . Tablet View: 900px;
 . Desktop View: more that tab;
 
 == Lighroom benchmarks
-![Alt text](lighthouse.PNG?raw=true "Lighthouse")
+image:lighthouse.PNG[Lighthouse]
 
 
