@@ -1,0 +1,109 @@
+mat-toolbar {
+  justify-content: space-between;
+}
+
+mat-card {
+  margin-bottom: 16px;
+  height: 350px;
+}
+
+.content {
+  justify-content: center;
+  margin: 0px -16px -16px 15px !important;
+}
+.content-main-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-card-header {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4841bf;
+}
+.content-card-img {
+  overflow: hidden;
+  /* width: 100%; */
+  display: flex;
+  flex: 1;
+  background: #f3f3f3;
+}
+
+:host ::ng-deep {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+:host ::ng-deep .mat-button,
+:host ::ng-deep .mat-icon-button,
+:host ::ng-deep .mat-stroked-button,
+:host ::ng-deep .mat-flat-button {
+  height: 32px;
+  background: #7dff8e;
+  margin: 5px !important;
+}
+:host ::ng-deep .mat-card-image {
+  margin: 0;
+  width: 100%;
+}
+:host ::ng-deep .mat-card-image:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0;
+  background: #f3f3f3;
+}
+
+footer {
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.sub-title {
+  font-weight: bold;
+}
+
+.filter-card {
+  display: flex;
+  background: #f3f3f3;
+  padding-bottom: 0;
+  padding-top: 0;
+  height: calc(100% - 40px);
+  overflow: auto;
+  margin-bottom: 0;
+  width: calc(100% - 35px);
+  margin: auto auto;
+}
+.filter-content {
+  padding: 0 37px;
+  /* flex-direction: column; */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.filter-headers {
+  font-weight: bold;
+  color: darkslategrey;
+  border-bottom: 2px solid darkslategrey;
+}
+
+.active-button {
+  background: #1ea619;
+}
+
+@media screen and (max-width: 600px) {
+  .filter-card {
+    flex-direction: column;
+  }
+}

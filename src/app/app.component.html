@@ -1,36 +1,41 @@
 <h1>SpaceX Launch Programs</h1>
 <mat-card class="filter-card">
-    <mat-card class="mat-elevation-z4">
-        <mat-card-header style="width: 260px;;">
+    <mat-card class="mat-elevation-z4" style="width: 230px; height: 70%;margin-left: 15px;">
+        <mat-card-header style="width: 260px;">
             <mat-card-title>Filters</mat-card-title>
         </mat-card-header>
         <mat-card-content class="filter-content">
             <div class="filter-headers">Launch Year</div>
             <span *ngFor=" let year of filterYears">
-                <button mat-button [ngClass]="filterYear === year && 'active-button'" (click)="filterByYear(year)">{{year}}</button>
+                <button mat-button [ngClass]="filterYear === year && 'active-button'"
+                    (click)="filterByYear(year)">{{year}}</button>
             </span>
             <div class="filter-headers">Successful Launch</div>
             <div>
-                <span><button mat-button [ngClass]="filterSLaunch === 'true' && 'active-button'" (click)="filterBySLanuch('true')">True</button>
+                <span><button mat-button [ngClass]="filterSLaunch === 'true' && 'active-button'"
+                        (click)="filterBySLanuch('true')">True</button>
                 </span>
-                <span><button mat-button [ngClass]="filterSLaunch === 'false' && 'active-button'" (click)="filterBySLanuch('false')">False</button>
+                <span><button mat-button [ngClass]="filterSLaunch === 'false' && 'active-button'"
+                        (click)="filterBySLanuch('false')">False</button>
                 </span>
             </div>
             <div class="filter-headers">Successful Landing</div>
             <div>
-                <span><button mat-button  [ngClass]="filterSL === 'true' && 'active-button'" (click)="filterBySL('true')">True</button>
+                <span><button mat-button [ngClass]="filterSL === 'true' && 'active-button'"
+                        (click)="filterBySL('true')">True</button>
                 </span>
-                <span><button mat-button [ngClass]="filterSL === 'false' && 'active-button'" (click)="filterBySL('false')">False</button>
+                <span><button mat-button [ngClass]="filterSL === 'false' && 'active-button'"
+                        (click)="filterBySL('false')">False</button>
                 </span>
             </div>
         </mat-card-content>
     </mat-card>
-
-    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" style="width: 100%;">
         <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.gt-md="25%"
             fxFlex.lt-lg="25% center" *ngFor="let tile of (spaceXData | async)">
-            <mat-card class="mat-elevation-z4 content-main-card">
-                <img mat-card-image [src]="tile?.links?.mission_patch" class="content-card-img">
+            <mat-card class="mat-elevation-z4 content-main-card" style="    width: 230px;">
+                <div class="content-card-img"> <img mat-card-image [src]=" tile?.links?.mission_patch">
+                </div>
                 <mat-card-content style="width: 215px; ">
                     <h2 class="content-card-header">
                         {{tile?.mission_name}} #{{tile?.flight_number}}
@@ -58,6 +63,9 @@
                 </mat-card-content>
             </mat-card>
         </div>
+        <md-card *ngIf="(spaceXData | async)?.length <= 0" style="align-items: center;
+    justify-content: center;
+    display: flex;">No Launch Programs</md-card>
     </div>
 </mat-card>
 <footer>Developed By: <span>Bhart Kumar</span></footer>
